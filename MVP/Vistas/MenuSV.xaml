@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVP.Vistas.MenuSV">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Margin="40" Grid.Column="0" Grid.Row="0" Text="Presión arterial" CornerRadius="200"
+                    BackgroundColor="DodgerBlue" TextColor="White" FontSize="Medium"
+                    x:Name="presionArterial" Clicked="presionArterial_Clicked"/>
+            <Button Margin="40" Grid.Column="0" Grid.Row="1" Text="Temperatura" CornerRadius="200"
+                    BackgroundColor="DodgerBlue" TextColor="White" FontSize="Medium"
+                    x:Name="temperatura" Clicked="temperatura_Clicked"/>
+            <Button Margin="40" Grid.Column="1" Grid.Row="0" Text="Peso" CornerRadius="200"
+                    BackgroundColor="DodgerBlue" TextColor="White" FontSize="Medium"
+                    x:Name="peso" Clicked="peso_Clicked"/>
+            <Button Margin="40" Grid.Column="1" Grid.Row="1" Text="Glucemia" CornerRadius="200"
+                    BackgroundColor="DodgerBlue" TextColor="White" FontSize="Medium"
+                    x:Name="glucemia" Clicked="glucemia_Clicked"/>
+            <Button Margin="40" Grid.Column="0" Grid.Row="2" Text="Saturación de Oxígeno" CornerRadius="200"
+                    BackgroundColor="DodgerBlue" TextColor="White" FontSize="Medium"
+                    x:Name="saturacionOxigeno" Clicked="saturacionOxigeno_Clicked"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MVP.PresionArterial">
+    <ContentPage.Content>
+        <StackLayout>
+
+
+
+            
+
+            <StackLayout>
+                <StackLayout  HorizontalOptions="Center" WidthRequest="300" Orientation="Horizontal" Spacing="20">
+                    <StackLayout WidthRequest="120">
+
+                        <Label
+                     Text="Presión Diastólica"
+                     FontSize="{OnPlatform Android=13}"
+                     TextColor="Black"/>
+
+                        <Frame
+                     HasShadow="{OnPlatform Android=true,iOS=false}"
+                     Padding="{OnPlatform Android=6,iOS=0}"
+                     CornerRadius="{OnPlatform Android=7}"
+                     >
+
+                            <Entry
+                    Placeholder="120"
+                    MaxLength="3"
+                    FontSize="{OnPlatform Android=15,iOS=16}"
+                    Keyboard="Numeric"
+                     Text="{Binding PresionDiasTxt, Mode=TwoWay}" 
+                    />
+                            
+                        </Frame>
+
+                        <Label
+                     Text="Presión Sistólica"
+                     FontSize="{OnPlatform Android=13}"
+                     TextColor="Black"/>
+
+                        <Frame
+                     HasShadow="{OnPlatform Android=true,iOS=false}"
+                     Padding="{OnPlatform Android=6,iOS=0}"
+                     CornerRadius="{OnPlatform Android=7}"
+                     >
+
+                            <Entry
+                    Placeholder="180"
+                    MaxLength="3"
+                    FontSize="{OnPlatform Android=15,iOS=16}"
+                    Keyboard="Numeric"
+                     Text="{Binding PresionSisTxt, Mode=TwoWay}" 
+                    />
+                            
+                            
+
+                        </Frame>
+                    </StackLayout>
+                    
+                    
+
+                    <StackLayout WidthRequest="190">
+                        
+                        <Label
+                     Text="Unidad: "
+                     FontSize="{OnPlatform Android=13}"
+                     TextColor="Black"/>
+
+
+                       
+                        <Picker 
+                            x:Name="pkrPA"
+                            Title="--Seleccionar Unidad--" 
+                                ItemsSource="{Binding ListUnidades}" 
+                                ItemDisplayBinding="{Binding UnidadPresion}" 
+                                SelectedItem="{Binding SelectedUnidad}" />
+                        
+                        <Label Text="{Binding UnidadText}" TextColor="OrangeRed" />
+
+
+
+                    </StackLayout>
+
+
+                </StackLayout>
+
+                <StackLayout>
+
+
+                    <StackLayout Grid.Row="8" HorizontalOptions="Center" Orientation="Vertical" >
+                        <Button
+                     Text="Guardar"
+                            TextColor="Black"
+                            Font="Montserrat-Medium.otf"
+                            FontSize="{OnPlatform Android=15}"
+                            BackgroundColor="#fcfcfc"
+                            BorderColor="#f2f2f2"
+                            BorderWidth="1.5"
+                            WidthRequest="300"
+                            HeightRequest="50"
+                            CornerRadius="7"
+                            Command="{Binding InsertCommand}"
+                            
+                    />
+                        <Button 
+                            Text="Ver Resultados"
+                            Clicked="Button_Clicked_1"
+                            />
+
+                    </StackLayout>
+
+                </StackLayout>
+
+            </StackLayout>
+
+
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVP.Vistas.PresionArterial">
+    <ContentPage.Content>
+        <StackLayout Margin="20" Padding="20,50,20,50">
+
+            <Label Text="Ingrese la Presión Sistólica" FontSize="Large"/>
+
+            <Entry Placeholder="Presión Sistólica" Keyboard="Numeric" x:Name="sistolica"
+                   VerticalOptions="StartAndExpand" FontSize="Large"/>
+
+            <Label Text="Ingrese la Presión Diastólica" FontSize="Large"/>
+
+            <Entry Placeholder="Presión Diastólica" Keyboard="Numeric" x:Name="diastolica"
+                   VerticalOptions="StartAndExpand" FontSize="Large"/>
+
+            <Label Text="Seleccione la unidad de medida" FontSize="Large"/>
+
+            <Picker x:Name="unidadPA" SelectedIndexChanged="unidadPA_SelectedIndexChanged"
+                    VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand" FontSize="Large"/>
+
+            <Button BackgroundColor="DodgerBlue" TextColor="White" FontSize="Medium"
+                    Text="Guardar" x:Name="guardarPA" Clicked="guardarPA_Clicked"
+                    VerticalOptions="CenterAndExpand" CornerRadius="15"/>
+            <Entry
+                    Placeholder="18"
+                    MaxLength="2"
+                    FontSize="{OnPlatform Android=15,iOS=16}"
+                    Keyboard="Numeric"
+                     Text="{Binding PresionDiasTxt, Mode=TwoWay}" 
+                    />
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage> -->

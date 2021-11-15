@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MVP.Vistas.Peso">
+    <ContentPage.Content>
+        <StackLayout Margin="20" Padding="20,50,20,50">
+
+            <Label Text="Ingrese el Peso" FontSize="Large"/>
+
+            <Entry Placeholder="Peso" Keyboard="Numeric" x:Name="peso"
+                   VerticalOptions="StartAndExpand" FontSize="Large"/>
+
+            <Label Text="Seleccione la unidad de medida" FontSize="Large"/>
+
+            <Picker x:Name="unidadPeso" SelectedIndexChanged="unidadPeso_SelectedIndexChanged"
+                    VerticalOptions="StartAndExpand" HorizontalOptions="EndAndExpand" FontSize="Large"/>
+
+            <Button BackgroundColor="DodgerBlue" TextColor="White" FontSize="Medium"
+                    Text="Guardar" x:Name="guardarPeso" Clicked="guardarPeso_Clicked"
+                    VerticalOptions="CenterAndExpand" CornerRadius="15"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

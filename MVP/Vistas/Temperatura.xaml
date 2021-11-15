@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="MVP.Temperatura">
+    <ContentPage.Content>
+        <StackLayout>
+            
+
+
+            <StackLayout HorizontalOptions="Center" WidthRequest="300" Orientation="Vertical" >
+                <Label
+                     Text="Temperatura: "
+                     FontSize="{OnPlatform Android=13}"
+                     TextColor="Black"/>
+
+                <Frame
+                     HasShadow="{OnPlatform Android=true,iOS=false}"
+                     Padding="{OnPlatform Android=6,iOS=0}"
+                     CornerRadius="{OnPlatform Android=7}"
+                     >
+
+                    <Entry
+                    Placeholder="25 grados"
+                    MaxLength="25"
+                    Keyboard="Numeric"
+                    FontSize="{OnPlatform Android=15,iOS=16}"
+                    Text="{Binding TempTxt, Mode=TwoWay}"
+                    />
+
+                </Frame>
+                <Picker
+                    x:Name="pkrTemp"
+                    Title="--Seleccionar Unidad--" 
+                                ItemsSource="{Binding ListUnidades}" 
+                                ItemDisplayBinding="{Binding UnidadTemperatura}"
+                                SelectedItem="{Binding SelectedUnidad}" />
+
+                <Label Text="{Binding UnidadText}" TextColor="OrangeRed" />
+            </StackLayout>
+
+            <StackLayout>
+                
+
+                <StackLayout>
+
+
+                    <StackLayout Grid.Row="8" HorizontalOptions="Center" Orientation="Vertical" >
+                        <Button
+                     Text="Guardar"
+                            TextColor="Black"
+                            Font="Montserrat-Medium.otf"
+                            FontSize="{OnPlatform Android=15}"
+                            BackgroundColor="#fcfcfc"
+                            BorderColor="#f2f2f2"
+                            BorderWidth="1.5"
+                            WidthRequest="300"
+                            HeightRequest="50"
+                            CornerRadius="7"
+                            Command="{Binding InsertCommand}"
+                            
+                    />
+                        <Button 
+                            Text="Ver Resultados"
+                            Clicked="Button_Clicked_1"
+                            />
+
+                    </StackLayout>
+
+                </StackLayout>
+
+            </StackLayout>
+
+
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
